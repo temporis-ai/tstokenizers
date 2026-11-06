@@ -11,5 +11,8 @@ license = "Apache-2.0"
 authors = [{ name = "Yi Jiang", email = "yijiang@temporis.co" }]
 dependencies = ["datasets~=4.8.4", "numpy~=2.0", "pandas~=2.2", "scipy~=1.15", "tokenizers~=0.21.4", "transformers~=4.51.3"]
 
+[project.urls]
+Repository = "https://github.com/opentemporal/tstokenizers"
+
 [project.scripts]
 tstokenizers-train = "tstokenizers.train_tokenizer:main"
