@@ -2,12 +2,12 @@ from .transforms import *
 import pandas as pd
 
 class Serializer:
-    def __init__(self, config):
-        self.quant_scale = config.quant_scale
-        self.patch_len = config.patch_len
-        self.quantiles = config.quantiles
-        self.columns = self.quantiles.columns
-        self.num_columns = len(self.columns)
+    def __init__(self, quantiles, patch_len, quant_scale):
+        self.quant_scale = quant_scale
+        self.patch_len = patch_len
+        self.quantiles = quantiles
+        self.columns = quantiles.columns
+        self.num_columns = len(quantiles.columns)
 
     def encode(self, df):
         df = normalize(df, self.quantiles)
