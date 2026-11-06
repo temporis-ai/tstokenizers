@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tstokenizer"
+version = "0.1.0"
+description = "Time series tokenizer for autoregressive modeling"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Yi Jiang", email = "yijiang@temporis.co" }]
+dependencies = ["datasets~=4.8.4", "numpy~=2.0", "pandas~=2.2", "scipy~=1.15", "tokenizers~=0.21.4", "transformers~=4.51.3"]
+
+[project.scripts]
+tstokenizer-train = "tstokenizer.train_tokenizer:main"
