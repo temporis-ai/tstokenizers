@@ -1,5 +1,5 @@
 '''
-python -m tstokenizer.train_tokenizer \
+python -m tstokenizers.train_tokenizer \
   --dataset-path=path \
   --output-path=path \
   --vocab-size=size \
@@ -9,7 +9,7 @@ python -m tstokenizer.train_tokenizer \
 from datasets import load_from_disk
 from tokenizers import Tokenizer, decoders, models, trainers
 from transformers import PreTrainedTokenizerFast
-from tstokenizer.codebook import ALPHABET
+from tstokenizers.codebook import ALPHABET
 import argparse
 
 def train_tokenizer(dataset_path, output_path, vocab_size, add_evt_token=False):

@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "tstokenizer"
+name = "tstokenizers"
 version = "0.1.0"
 description = "Time series tokenizer for autoregressive modeling"
 readme = "README.md"
@@ -12,4 +12,4 @@ authors = [{ name = "Yi Jiang", email = "yijiang@temporis.co" }]
 dependencies = ["datasets~=4.8.4", "numpy~=2.0", "pandas~=2.2", "scipy~=1.15", "tokenizers~=0.21.4", "transformers~=4.51.3"]
 
 [project.scripts]
-tstokenizer-train = "tstokenizer.train_tokenizer:main"
+tstokenizers-train = "tstokenizers.train_tokenizer:main"

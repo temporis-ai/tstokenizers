@@ -1,4 +1,4 @@
-# tstokenizer
+# tstokenizers
 
 Time series tokenizer for autoregressive modeling. Converts multivariate time
 series into text, then trains a BPE tokenizer on it. Based on the FAST method
@@ -7,7 +7,7 @@ by Physical Intelligence.
 ## Installation
 
 ```bash
-pip install tstokenizer
+pip install tstokenizers
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ Serialize a DataFrame into text. Its row count must be a multiple of
 `patch_len`.
 
 ```python
-from tstokenizer import Serializer
+from tstokenizers import Serializer
 import numpy as np
 import pandas as pd
 
@@ -35,14 +35,14 @@ patch_text_len = serializer.patch_text_len()
 Train a BPE tokenizer on a Hugging Face dataset with a `text` column:
 
 ```bash
-tstokenizer-train --dataset-path=path --output-path=path --vocab-size=1024
+tstokenizers-train --dataset-path=path --output-path=path --vocab-size=1024
 ```
 
 Encode text into token ids:
 
 ```python
 from transformers import AutoTokenizer
-from tstokenizer import Processor
+from tstokenizers import Processor
 
 processor = Processor(AutoTokenizer.from_pretrained(path))
 token_ids = processor.encode(text, patch_text_len)
