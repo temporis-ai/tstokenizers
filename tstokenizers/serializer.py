@@ -10,6 +10,7 @@ class Serializer:
         self.num_columns = len(quantiles.columns)
 
     def encode(self, df):
+        df = clip(df, self.quantiles)
         df = normalize(df, self.quantiles)
         values = df[self.columns].to_numpy()
         values = values.reshape(-1, self.patch_len, self.num_columns)

@@ -2,6 +2,10 @@ from .codebook import CHUNK_SIZE, TEXT_TO_VALUE, VALUE_TO_TEXT
 from scipy.fft import dct, idct
 import numpy as np
 
+def clip(df, quantiles):
+    bounds = quantiles.reindex([0, 1])
+    return df.clip(bounds.loc[0], bounds.loc[1], axis=1)
+
 def normalize(df, quantiles):
     p1 = quantiles.loc[0.01]
     p99 = quantiles.loc[0.99]
